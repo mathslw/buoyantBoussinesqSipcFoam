@@ -1,7 +1,6 @@
 # buoyantBoussinesqSipcFoam
 Standard incremental pressure-correction (SIPC) scheme in OpenFOAM
 # How to cite
-'''
 @article{liu2017development,
   title={Development of a fast fluid dynamics-based adjoint method for the inverse design of indoor environments},
   author={Liu, Wei and You, Ruoyu and Zhang, Jie and Chen, Qingyan},
@@ -12,4 +11,3 @@ Standard incremental pressure-correction (SIPC) scheme in OpenFOAM
   year={2017},
   publisher={Taylor \& Francis}
 }
-'''
