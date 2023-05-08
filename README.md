@@ -3,6 +3,11 @@ Standard incremental pressure-correction (SIPC) scheme in OpenFOAM
 
 Compatible with **OpenFOAM4**
 
+# Installation
+
+    cd buoyantBoussinesqSipcFoam
+    ./Allwmake
+  
 # How to cite
 Please cite as
   
