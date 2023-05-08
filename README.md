@@ -1,5 +1,8 @@
 # buoyantBoussinesqSipcFoam
 Standard incremental pressure-correction (SIPC) scheme in OpenFOAM
+
+Compatible with **OpenFOAM4**
+
 # How to cite
 Please cite as
   
