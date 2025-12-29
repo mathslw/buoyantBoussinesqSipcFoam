@@ -1,0 +1,102 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      alphat;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -1 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    Diffuser
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    Exhaust
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    Box_north
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    Box_south
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    Box_east
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    Box_west
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    Box_top
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    Ceiling
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    Floor
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    North_wall
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    East_wall
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    South_wall
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+    West_wall
+    {
+        type            alphatJayatillekeWallFunction;
+        Prt             0.85;
+        value           uniform 0;
+    }
+
+}
+
+// ************************************************************************* //

@@ -1,0 +1,100 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+13
+(
+    Box_north
+    {
+        type            wall;
+        nFaces          357;
+        startFace       253256;
+    }
+    Box_south
+    {
+        type            wall;
+        nFaces          357;
+        startFace       253613;
+    }
+    Box_east
+    {
+        type            wall;
+        nFaces          357;
+        startFace       253970;
+    }
+    Box_west
+    {
+        type            wall;
+        nFaces          357;
+        startFace       254327;
+    }
+    Box_top
+    {
+        type            wall;
+        nFaces          289;
+        startFace       254684;
+    }
+    Ceiling
+    {
+        type            wall;
+        nFaces          2209;
+        startFace       254973;
+    }
+    Floor
+    {
+        type            wall;
+        nFaces          1920;
+        startFace       257182;
+    }
+    North_wall
+    {
+        type            wall;
+        nFaces          1974;
+        startFace       259102;
+    }
+    Exhaust
+    {
+        type            patch;
+        nFaces          235;
+        startFace       261076;
+    }
+    East_wall
+    {
+        type            wall;
+        nFaces          1739;
+        startFace       261311;
+    }
+    South_wall
+    {
+        type            wall;
+        nFaces          1974;
+        startFace       263050;
+    }
+    West_wall
+    {
+        type            wall;
+        nFaces          1786;
+        startFace       265024;
+    }
+    Diffuser
+    {
+        type            patch;
+        nFaces          188;
+        startFace       266810;
+    }
+)
+
+// ************************************************************************* //

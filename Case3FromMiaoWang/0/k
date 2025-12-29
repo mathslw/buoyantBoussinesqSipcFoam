@@ -1,0 +1,91 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      k;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0.028;
+
+boundaryField
+{
+    Diffuser
+    {
+        type            fixedValue;
+        value           uniform 0.028;
+    }
+    Exhaust
+    {
+        type            zeroGradient;
+    }
+    Box_north
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    Box_south
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    Box_east
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    Box_west
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    Box_top
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    Ceiling
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    Floor
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    North_wall
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    East_wall
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    South_wall
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+    West_wall
+    {
+        type            kqRWallFunction;
+        value           uniform 0.028;
+    }
+
+}
+
+// ************************************************************************* //

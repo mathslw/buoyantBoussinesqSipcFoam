@@ -1,0 +1,125 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      nut;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -1 0 0 0 0];
+
+internalField   uniform 0; 
+
+boundaryField
+{
+    Box_north
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    Box_south
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    Box_east
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    Box_west
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    Box_top
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    Ceiling
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    Floor
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    North_wall
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    Exhaust
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    East_wall
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    South_wall
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    West_wall
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    Diffuser
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //

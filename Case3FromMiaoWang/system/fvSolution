@@ -1,0 +1,112 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+    dp
+    {
+        solver          GAMG;
+        tolerance       1e-08;
+        relTol          0.01;
+        smoother        GaussSeidel;
+        nPreSweeps      0;
+        nPostSweeps     2;
+        cacheAgglomeration true;
+        nCellsInCoarsestLevel 10;
+        agglomerator    faceAreaPair;
+        mergeLevels     1;
+/*
+        solver          PCG;
+        preconditioner  DIC;
+        tolerance       1e-06;
+        relTol          0;
+*/
+    }
+
+    dpFinal
+    {
+        $dp;
+        tolerance       1e-08;
+        relTol          0;
+    }
+
+    U
+    {/*
+        solver          GAMG;
+        tolerance       1e-08;
+        relTol          0.01;
+        smoother        GaussSeidel;
+        nPreSweeps      0;
+        nPostSweeps     2;
+        cacheAgglomeration true;
+        nCellsInCoarsestLevel 10;
+        agglomerator    faceAreaPair;
+        mergeLevels     1;
+*/
+        solver          PBiCG;
+        preconditioner  DILU;
+        tolerance       1e-8;
+        relTol          0.01;
+    }
+
+    "(T|k|epsilon)"
+    {/*
+        solver          GAMG;
+        tolerance       1e-08;
+        relTol          0.01;
+        smoother        GaussSeidel;
+        nPreSweeps      0;
+        nPostSweeps     2;
+        cacheAgglomeration true;
+        nCellsInCoarsestLevel 10;
+        agglomerator    faceAreaPair;
+        mergeLevels     1;
+*/
+        solver          PBiCG;
+        preconditioner  DILU;
+        tolerance       1e-8;
+        relTol          0.01;
+    }
+}
+
+PISO
+{
+    nCorrectors     1;
+    nNonOrthogonalCorrectors 0;
+    pRefCell        0;
+    pRefValue       0;
+}
+
+relaxationFactors
+{
+    fields
+    {
+    }
+    equations
+    {
+        "(U|T|k|epsilon|R)" 1;
+        "(U|T|k|epsilon|R)Final" 1;
+    }
+}
+
+interpolationSchemes
+{
+  U_0 cellPoint;
+  T_0 cellPoint;
+}
+
+// ************************************************************************* //

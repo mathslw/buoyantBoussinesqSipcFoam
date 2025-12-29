@@ -1,0 +1,79 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      dp;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    Diffuser
+    {
+        type            zeroGradient;
+    }
+    Exhaust
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+    Box_north
+    {
+        type            zeroGradient;
+    }
+    Box_south
+    {
+        type            zeroGradient;
+    }
+    Box_east
+    {
+        type            zeroGradient;
+    }
+    Box_west
+    {
+        type            zeroGradient;
+    }
+    Box_top
+    {
+        type            zeroGradient;
+    }
+    Ceiling
+    {
+        type            zeroGradient;
+    }
+    Floor
+    {
+        type            zeroGradient;
+    }
+    North_wall
+    {
+        type            zeroGradient;
+    }
+    East_wall
+    {
+        type            zeroGradient;
+    }
+    South_wall
+    {
+        type            zeroGradient;
+    }
+    West_wall
+    {
+        type            zeroGradient;
+    }
+
+}
+
+// ************************************************************************* //

@@ -1,0 +1,123 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      epsilon;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -3 0 0 0 0];
+
+internalField   uniform 0.05;
+
+boundaryField
+{
+    Diffuser
+    {
+        type            fixedValue;
+        value           uniform 0.05;
+    }
+    Exhaust
+    {
+        type            zeroGradient;
+    }
+    Box_north
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    Box_south
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    Box_east
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    Box_west
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    Box_top
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    Ceiling
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    Floor
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    North_wall
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    East_wall
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    South_wall
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+    West_wall
+    {
+        type            epsilonWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0.05;
+    }
+
+}
+
+// ************************************************************************* //
